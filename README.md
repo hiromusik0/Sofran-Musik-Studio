@@ -1,27 +1,30 @@
 # Sofran Musik Studio — Netlify rebuild
 
-This is a separate rebuild branch based on the current Framer project inspected on 21 Nov 2026. It does not replace or modify the Framer source project.
+This branch is a static rebuild of the existing Framer project. The Framer source project remains untouched.
 
 ## Deployment
-- Repository: `hiromusik0/Sofran-Musik-Studio`
-- Branch: `netlify-rebuild`
-- Build command: leave blank
-- Publish directory: `.`
+- GitHub branch: `netlify-rebuild`
+- Netlify build command: empty (plain HTML/CSS/JS)
+- Publish directory: repository root (`.`)
+- Netlify config: `netlify.toml`
+- SPA routes: `_redirects`
 
-## Current state
-- All 9 intended page routes have corresponding page metadata and render functions.
-- Page titles/descriptions, responsive CSS breakpoints, mobile navigation, reduced-motion styling, and SPA history navigation are present.
-- The source Framer project contains a 5-step registration component with Supabase POST logic, age-based guardian requirements, consent, and duplicate-submission protection.
-- That original form has **not yet been ported** to this rebuild. The current rebuild form is a small disabled placeholder; it must not be used to collect real applications.
-- The original Framer asset library has not yet been transferred. The rebuild currently uses text and CSS placeholders instead of the original images; the gallery is not populated with real photos.
-- Book pricing, official book descriptions, purchase links, and some biography/material details remain marked as awaiting verification.
+## Current implementation
+- Nine routes: Home, Tentang, Sofran Method, Pengajar, Galeri, Toko Buku, Lokasi & Kontak, Mulai Belajar, and Pendaftaran.
+- Responsive navigation and page routing.
+- Original Framer-hosted visual assets reused for the hero, music imagery, book mockups, and registration background.
+- Framer-inspired motion system: hero image drift, musical light particles, word-by-word heading reveal, scroll-triggered reveal, staggered cards, hover lift/tilt, floating book mockups, and page transitions.
+- Reduced-motion accessibility support.
+- Five-step enrollment form ported with age-based guardian requirements, consent, duplicate-submission ID, and Supabase REST submission matching the existing `applications` table.
 
-## Test findings (static source inspection)
-- PASS: 9 route definitions exist.
-- PASS: SPA route rendering and browser back/forward handling are present.
-- PASS: mobile breakpoints and reduced-motion CSS are present.
-- NOT READY: registration form is incomplete and intentionally disabled.
-- NOT READY: original images/assets and exact Framer animation/interaction parity are not transferred.
-- NOT READY: visual browser testing and deployed Netlify testing have not been performed.
+## Important verification status
+- The new animations are recreated in CSS/JavaScript based on inspected Framer effect settings; they are not a byte-for-byte export of Framer's runtime and still require visual comparison and tuning.
+- No real registration submission has been sent from this rebuild. Do not submit real student data until the live form is tested and approved.
+- Gallery documentation is still placeholder content because original event photos were not available in the Framer project.
+- Some biography, official book descriptions, prices, availability, and purchase links still require confirmation from the studio.
+- The teacher portrait and studio photographs are not real documentation; conceptual imagery is labeled accordingly.
+- The site has not yet passed a full browser QA pass on desktop, tablet, and mobile.
 
-Do not deploy as the production site or delete the Framer site until visual, mobile, link, form, and Supabase tests pass.
+## Safety
+- Keep the original Framer site and GitHub `main` branch intact until the Netlify version passes visual, navigation, responsive, and form tests.
+- Do not use the production registration form for test submissions.
