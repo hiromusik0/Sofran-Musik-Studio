@@ -1,18 +1,20 @@
 # Sofran Musik Studio — Netlify rebuild
 
-Versi rebuild terpisah dari proyek Framer. Branch: `netlify-rebuild`.
+This is a separate rebuild branch based on the current Framer project content inspected on 21 Nov 2026. It does not replace or modify the Framer source project.
 
-## Deploy ke Netlify
-- Import repository `hiromusik0/Sofran-Musik-Studio`
-- Pilih branch `netlify-rebuild`
-- Build command: kosong
+## Deployment
+- Repository: `hiromusik0/Sofran-Musik-Studio`
+- Branch: `netlify-rebuild`
+- Build command: leave blank
 - Publish directory: `.`
 
-## Status
-- Sembilan rute utama disiapkan sebagai website responsif.
-- Tema visual gelap ungu dengan aksen emas, tipografi Cormorant Garamond dan Inter.
-- Form pendaftaran sengaja belum mengirim data sampai integrasi Supabase dan keamanan RLS diverifikasi.
-- Foto/cover yang masih placeholder di Framer tetap diberi label placeholder; aset asli belum disalin ke branch ini.
-- SEO dasar: title, description, canonical, robots.txt, sitemap.xml.
+## Current state
+- Main routes recreated: Home, Tentang, Sofran Method, Pengajar, Galeri, Toko Buku, Lokasi & Kontak, Mulai Belajar, Pendaftaran.
+- Page titles and descriptions synced to the current Framer metadata.
+- Responsive styling, route navigation, robots.txt and sitemap.xml included.
+- Text and sections are still a partial rebuild, not a pixel-perfect copy of Framer.
+- Original Framer media assets and full animation/interaction behavior have not yet been transferred.
+- The registration page is intentionally non-submitting until its current staged form fields, Supabase schema, and RLS policies are verified.
+- Some content in the source Framer project is explicitly marked as conceptual or awaiting official details; these are kept as placeholders.
 
-Jangan hapus branch `main` atau situs Framer sebelum pengujian dan migrasi dinyatakan selesai.
+Do not deploy as the production site or delete the Framer site until visual, mobile, link, form, and Supabase tests pass.
