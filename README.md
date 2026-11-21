@@ -1,6 +1,6 @@
 # Sofran Musik Studio — Netlify rebuild
 
-This is a separate rebuild branch based on the current Framer project content inspected on 21 Nov 2026. It does not replace or modify the Framer source project.
+This is a separate rebuild branch based on the current Framer project inspected on 21 Nov 2026. It does not replace or modify the Framer source project.
 
 ## Deployment
 - Repository: `hiromusik0/Sofran-Musik-Studio`
@@ -9,12 +9,19 @@ This is a separate rebuild branch based on the current Framer project content in
 - Publish directory: `.`
 
 ## Current state
-- Main routes recreated: Home, Tentang, Sofran Method, Pengajar, Galeri, Toko Buku, Lokasi & Kontak, Mulai Belajar, Pendaftaran.
-- Page titles and descriptions synced to the current Framer metadata.
-- Responsive styling, route navigation, robots.txt and sitemap.xml included.
-- Text and sections are still a partial rebuild, not a pixel-perfect copy of Framer.
-- Original Framer media assets and full animation/interaction behavior have not yet been transferred.
-- The registration page is intentionally non-submitting until its current staged form fields, Supabase schema, and RLS policies are verified.
-- Some content in the source Framer project is explicitly marked as conceptual or awaiting official details; these are kept as placeholders.
+- All 9 intended page routes have corresponding page metadata and render functions.
+- Page titles/descriptions, responsive CSS breakpoints, mobile navigation, reduced-motion styling, and SPA history navigation are present.
+- The source Framer project contains a 5-step registration component with Supabase POST logic, age-based guardian requirements, consent, and duplicate-submission protection.
+- That original form has **not yet been ported** to this rebuild. The current rebuild form is a small disabled placeholder; it must not be used to collect real applications.
+- The original Framer asset library has not yet been transferred. The rebuild currently uses text and CSS placeholders instead of the original images; the gallery is not populated with real photos.
+- Book pricing, official book descriptions, purchase links, and some biography/material details remain marked as awaiting verification.
+
+## Test findings (static source inspection)
+- PASS: 9 route definitions exist.
+- PASS: SPA route rendering and browser back/forward handling are present.
+- PASS: mobile breakpoints and reduced-motion CSS are present.
+- NOT READY: registration form is incomplete and intentionally disabled.
+- NOT READY: original images/assets and exact Framer animation/interaction parity are not transferred.
+- NOT READY: visual browser testing and deployed Netlify testing have not been performed.
 
 Do not deploy as the production site or delete the Framer site until visual, mobile, link, form, and Supabase tests pass.
